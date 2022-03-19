@@ -1,4 +1,3 @@
-const { celebrate, Joi, Segments } = require('celebrate')
 const { v4: uuid } = require('uuid')
 const { addDays } = require('date-fns')
 const Loan = require('../../models/loan')
