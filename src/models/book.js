@@ -8,11 +8,11 @@ const bookSchema = new Schema(
     author: String,
     numberOfPages: Number,
     libraryId: String,
+    onLoan: Boolean,
   },
   {
     toObject: {
       transform: function (doc, ret) {
-        ret.id = ret._id
         delete ret._id
         delete ret.__v
       },

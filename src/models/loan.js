@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const librarySchema = new Schema(
+const loanSchema = new Schema(
   {
     id: { type: String, unique: true },
-    name: { type: String, unique: true },
-    address: String,
+    bookId: String,
+    startsAt: Date,
+    endsAt: Date,
+    returnedAt: Date,
   },
   {
     toObject: {
@@ -17,6 +19,6 @@ const librarySchema = new Schema(
   }
 )
 
-const Library = mongoose.model('library', librarySchema)
+const Loan = mongoose.model('loan', loanSchema)
 
-module.exports = Library
+module.exports = Loan
