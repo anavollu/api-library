@@ -11,7 +11,7 @@ app.post('/library/', (req, res) => {
 > Add a book to a library
 
 ```js
-app.post('/library/book', (req, res) => {
+app.post('/library/:id/book', (req, res) => {
   res.json(book)
 })
 ```
@@ -19,7 +19,7 @@ app.post('/library/book', (req, res) => {
 > Create a book loan
 
 ```js
-app.post('/library/book/loan', (req, res) => {
+app.post('/book/:id/loan', (req, res) => {
   res.json(loan)
 })
 ```
@@ -27,7 +27,7 @@ app.post('/library/book/loan', (req, res) => {
 > Complete loan
 
 ```js
-app.put('/library/book/loan', (req, res) => {
+app.post('/loan/:id/finish', (req, res) => {
   res.json(loan)
 })
 ```
