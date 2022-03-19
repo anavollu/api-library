@@ -4,7 +4,7 @@
 
 ```js
 app.post('/library/', (req, res) => {
-  res.send('OK')
+  res.json(library)
 })
 ```
 
@@ -12,7 +12,7 @@ app.post('/library/', (req, res) => {
 
 ```js
 app.post('/library/book', (req, res) => {
-  res.send('book')
+  res.json(book)
 })
 ```
 
@@ -20,7 +20,7 @@ app.post('/library/book', (req, res) => {
 
 ```js
 app.post('/library/book/loan', (req, res) => {
-  res.send('book')
+  res.json(loan)
 })
 ```
 
@@ -28,6 +28,6 @@ app.post('/library/book/loan', (req, res) => {
 
 ```js
 app.put('/library/book/loan', (req, res) => {
-  res.send('book')
+  res.json(loan)
 })
 ```
