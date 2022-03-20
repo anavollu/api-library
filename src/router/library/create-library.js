@@ -17,7 +17,10 @@ module.exports = [
       return res.json(library.toObject())
     } catch (error) {
       if (error?.code === 11000) {
-        return next({ status: 400 })
+        return next({
+          status: 400,
+          message: `${Object.keys(error.keyPattern).join(',')} Must Be Unique`,
+        })
       }
       return next(error)
     }
