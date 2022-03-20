@@ -7,7 +7,7 @@ const { auth } = require('../../middleware/auth')
 const router = express.Router()
 
 router.post('/', auth, createLibrary)
-router.post('/:id/book', createBook)
-router.post('/:id/librarian', createLibrarian)
+router.post('/:id/book', auth, createBook)
+router.post('/:id/librarian', auth, createLibrarian)
 
 module.exports = router
