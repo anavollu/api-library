@@ -17,12 +17,12 @@ module.exports = [
       const { name, email, password } = req.body
       const id = uuid()
       const saltRounds = 10
-      const hashedPassword = bcrypt.hash(password, saltRounds)
+      const hashedPassword = await bcrypt.hash(password, saltRounds)
       const librarian = await Librarian.create({
         id,
         name,
         email,
-        hashedPassword,
+        password: hashedPassword,
         libraryId,
       })
       return res.json(librarian.toObject())

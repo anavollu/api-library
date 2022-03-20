@@ -4,9 +4,9 @@ const { Schema } = mongoose
 const librarianSchema = new Schema(
   {
     id: { type: String, unique: true },
-    name: String,
-    email: { type: String, unique: true },
-    password: String,
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
     libraryId: String,
   },
   {
@@ -14,6 +14,7 @@ const librarianSchema = new Schema(
       transform: function (doc, ret) {
         delete ret._id
         delete ret.__v
+        delete ret.password
       },
     },
   }
