@@ -18,11 +18,14 @@ module.exports = [
       if (!found) {
         return next({ status: 400 })
       }
+
       const isEqual = await bcrypt.compare(password, found.password)
+
       if (isEqual) {
         const token = auth.createToken(email, found.name)
         return res.json({ token })
       }
+      return next({ status: 400 })
     } catch (error) {
       return next(error)
     }
